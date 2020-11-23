@@ -1,0 +1,236 @@
+/* styling */
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+:root{
+    --dark: #2f3e46; 
+     --console-color: #2A353C;
+    --screen-color: #000000;
+    --bot-color: #586F7C;
+    --user-color: #4B9592;
+    --background:  hsl(206, 13%, 76%);
+    --header: #586F7C;
+}
+
+/* background */
+body{
+    background: var(--background);
+    line-height: 1.3;
+    font-family: 'Istok Web', sans-serif;
+    font-size: 16px;
+}
+
+/* wrapper */
+.wrapper{
+    width: 50vw;
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: var(--console-color);
+    border-radius: 15px 15px 15px 15px;}
+    
+p{
+    margin: auto;
+    font-size: 1.1rem;
+    margin-top: 1vh;
+    margin-bottom:.5vh;
+    width: 80%;
+    color: #F4F4F9;
+}
+
+/* screen */
+#screen{
+    border: 1px solid rgb(0, 0, 0);
+    background: var(--screen-color);
+    height: 60vh;
+    width: 45vw;
+    margin: auto;
+    margin-top: 3vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* header */
+#header{
+    height: auto;
+    width: 45vw;
+    display: flex;
+    background-color: var(--header);
+    border-radius: 15px 15px 0 0;
+    border: 1px solid #303332;
+    border-bottom: 1px solid var(--dark);
+    box-shadow: 2px 2px 5px var(--dark);
+}
+
+i{
+    color: white;
+    margin: 0vh 1vw ;
+}
+
+#headername{
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+/* Message Bubbles from ChatBot and user*/
+.bubble{
+    height: auto;
+    width: 22vw;
+    margin: 2vh 0.5vw 1vh 0;
+    word-wrap: break-word;
+}
+
+.bot{
+    float: left;
+    background: var(--bot-color);
+    margin-left: -20vw;    
+    border-radius: 15px 15px 15px 0px;
+}
+
+.user{
+    float: right;
+    background: var(--user-color);
+    margin-left: 20vw;
+    border-radius: 15px 15px 0px 15px;
+}
+
+/* time */
+.time{
+    float: right; 
+    color: white;
+    margin: 1vh 2vw;
+    font-size: .8rem;
+    width: 80%;
+}
+
+/* inputBox */
+.bottomSection{
+    height: 15vh;
+    width: 50vw;
+    background: var(--console-color); 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* input */
+#input{
+    height: 7vh;
+    width: 45vw;
+    margin: 1vh 2.5vw;
+    border-radius: 10px 10px;
+    background-color: var(--screen-color);
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+}
+
+.input{
+    height: 5vh;
+}
+
+/* button */
+.button{
+    width: 100%;
+    margin-top: 5vh;
+}
+
+#send{
+    background: var(--user-color);
+    font-family: 'Istok Web', sans-serif;
+    font-size: 1rem;
+    color: white;
+    border: 0;
+    border-radius: 10px 10px;
+    height: 5vh;
+    padding: 10px 25px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+input#send:hover{
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.624);
+    transition: .3s;
+    background: #468a88;
+}
+
+/* For smaller screens*/
+@media only screen and (max-width: 450px) {
+    .wrapper{
+        width: 80vw;
+        height: 65vh;
+        align-items: center;
+        margin-top: 10vh;
+    }
+    #screen{
+        width: 70vw;
+        height: 55vh;
+        align-items: center;
+    }
+    #header{
+        width: 100%;
+    }
+
+    .bottomSection{
+        width: 80vw;
+        height: 17vh;
+        align-items: center;
+    }
+    #input{
+        width: 60vw;
+        margin: 1vh 10vw;
+    }
+    
+    .button{
+        margin-top: 2vh;
+    }
+
+    #send{
+        width: 20vw;
+        padding: 1vh;
+    }
+
+    .bubble{
+        margin: 1vh auto; 
+        width: 80%;
+    }
+}
+
+/* ANIMATIONS */
+.circle{
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.775);
+    margin: .5vh;
+    padding: .5vh;
+    border-radius: 15px 15px;
+  }
+.load-7 .circle{
+    animation: loading 1.5s  infinite;
+  }
+
+@keyframes loading{
+    0% {
+      transform: translate(1vw, 0) ;
+      opacity: 50%;
+    }
+    50% {
+      transform: translate(15vw, 0) ;
+      opacity: 100%;
+    }
+    100% {
+      transform: translate(1vw, 0) ;
+      opacity: 50%;
+    }
+  }
